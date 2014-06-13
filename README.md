@@ -13,4 +13,4 @@ Instructions:
 
 3. You can make changes to the files locally (on your computer) as you normally would, the GitHub app will keep track of the changes you've made.
 
-4. Once you're ready to share your changes with your classmates, "commit" your changes with the Github app (try to give a useful description of the changes you've made) and others will then be able to sync your changes to their local files 
+4. Once you're ready to share your changes with your classmates, "commit" and "sync" your changes with the Github app (try to give a useful description of the changes you've made) and others will then be able to sync your changes to their local files 
