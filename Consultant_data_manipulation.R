@@ -17,6 +17,15 @@ for(i in unique(cdata$ID)){
 cdata2 <- as.data.frame(cdata2)
 names(cdata2) <- c("ID","count","volume")
 
+# convert count and volume into numeric
+cdata2$count=as.numeric(as.character(cdata2$count))
+cdata2$volume=as.numeric(as.character(cdata2$volume))
+
+
+
+# change NAs to 0s
+cdata2$count[is.na(cdata2$count)]=0
+
 #calculate density
 cdata2$density <- cdata2$count/cdata2$volume
 
