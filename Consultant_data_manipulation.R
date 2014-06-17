@@ -29,3 +29,4 @@ cdata2$count[is.na(cdata2$count)]=0
 #calculate density
 cdata2$density <- cdata2$count/cdata2$volume
 
+write.csv(cdata2,"~/Documents/GitHub/Dal-Intertidal-2014/Consultant Data Sheet 2 2013.csv")
