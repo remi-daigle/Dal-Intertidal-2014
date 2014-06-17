@@ -30,3 +30,39 @@ cdata2$count[is.na(cdata2$count)]=0
 cdata2$density <- cdata2$count/cdata2$volume
 
 write.csv(cdata2,"~/Documents/GitHub/Dal-Intertidal-2014/Consultant Data Sheet 2 2013.csv")
+
+################ 5a ############################
+#regular
+hist(cdata$size_mm)
+
+#log
+obj <- hist(cdata$size_mm)
+obj$counts <- log10(obj$counts+1)
+plot(obj)
+
+# by tidal height
+obj <- hist(cdata$size_mm[cdata$strata=="H"])
+obj$counts <- obj$counts/sum(obj$counts)*100
+plot(obj)
+obj <- hist(cdata$size_mm[cdata$strata=="M"])
+obj$counts <- obj$counts/sum(obj$counts)*100
+plot(obj)
+obj <- hist(cdata$size_mm[cdata$strata=="L"])
+obj$counts <- obj$counts/sum(obj$counts)*100
+plot(obj)
+
+######################## 5b ##################
+hist(cdata$size_mm[cdata$depth_bin==1])
+hist(cdata$size_mm[cdata$depth_bin==2])
+hist(cdata$size_mm[cdata$depth_bin==3])
+hist(cdata$size_mm[cdata$depth_bin==4])
+hist(cdata$size_mm[cdata$depth_bin==5])
+
+######################## 5c #####################
+require(plyr)
+table <- ddply(cdata,.(strata),summarize,
+               mean_length=mean(size_mm,na.rm = TRUE),
+               sd_length=sd(size_mm,na.rm = TRUE),
+               n_length=sum(is.na(size_mm)==F)
+)
+
