@@ -1,1 +1,2 @@
-Site_name,Date,Latitude,Longitude,Transect,Strata,SST,Salinity,RDP,SWH,SST_Buoy,Salinity_Buoy,species_A,species_B
+Site_name,Date,Latitude,Longitude,Transect,Strata,SST,Salinity,RDP,SWH,SST_Buoy,Salinity_Buoy,Slope,pc_und_Semibalanus
+this is just to show the students how github works,,,,,,,,,,,,,
