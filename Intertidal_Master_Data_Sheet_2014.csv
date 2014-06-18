@@ -1,7 +1,7 @@
 Date,Site_name,Latitude,Longitude,Transect,Transect_length (m),Transect_ location (m),Strata,Slope,SST,Salinity,RDP,SWH,Quadrat_m2,Core_m3,ab_m2_Mytilus_sp,ab_m2_Semibalanus_balanoides,ab_m2_Littorina_saxatilis,ab_m3_Mya_arenaria,ab_m3_Mytilus_sp,ab_m3_Semibalanus_balanoides,ab_m2_Pagurus_longicarpus,ab_m3_Pagurus_longicarpus,pc_Fucus_spiralis,pc_Fucus_distichous_drift,pc_Fucus_distichous_attached,pc_Fucus_vesiculosus,pc_Ulva_ something???,ab_m3_Glycera_dibrachiata,ab_m2_Carcinus_maenas,ab_m3_Ensis_directus,Comments
-06-14-2014,South Street,4437' 43.79,6335' 29,c,11,8,h,,,,,,0.53,0.000307,,666,,,,,,,,,,,,,,,
-06-14-2014,South Street,4437' 43.79,6335' 29,c,11,5.5,m,,,,,,0.53,0.000307,66,3172,125,,,,,,,,30%,,,,1,,
-06-14-2014,South Street,4437' 43.79,6335' 29,c,11,2,l,,,,,,0.53,0.002309,89,621,186,1,,,,,,,15%,,,,,,clam 51.5 mm
-06-16-2014,Wolfville,,,c,525.7,376.2,h,,,,,,0.53,0.00246,,,1,,,,,,,,,,2%,,,,
-06-16-2014,Wolfville,,,c,525.7,221.89,m,,,,,,0.53,0.00246,,,,,,,,,,,,,,,,,
-06-16-2014,Wolfville,,,c,525.7,116.7,l,,,,,,0.53,0.00246,,153,,,,,2,,,,,,,,,2,
+06-14-2014,South Street,"44°37' 59"" ","63°35' 55""",c,11,8,h,4.484,12,1.026,NA,,0.53,0.000307,,666,,,,,,,,,,,,,,,
+06-14-2014,South Street,"44°37' 59"" ","63°35' 55""",c,11,5.5,m,3.544,12,1.026,1,,0.53,0.000307,66,3172,125,,,,,,,,30%,,,,1,,
+06-14-2014,South Street,"44°37' 59"" ","63°35' 55""",c,11,2,l,1.771,12,1.026,NA,,0.53,0.002309,89,621,186,1,,,,,,,15%,,,,,,clam 51.5 mm
+06-16-2014,Wolfville,"45° 9'35""","64°21'30""",c,525.7,376.2,h,2.128,13,1.022,10,,0.53,0.00246,,,1,,,,,,,,,,2%,,,,
+06-16-2014,Wolfville,"45° 9'35""","64°21'30""",c,525.7,221.89,m,0.490,13,1.022,9,,0.53,0.00246,,,,,,,,,,,,,,,,,
+06-16-2014,Wolfville,"45° 9'35""","64°21'30""",c,525.7,116.7,l,0.359,13,1.022,5,,0.53,0.00246,,153,,,,,2,,,,,,,,,2,
