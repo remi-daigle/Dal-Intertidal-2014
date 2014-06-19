@@ -13,22 +13,8 @@ for(site in unique(cdata$Site_name)){
   for(sp in names(species)){
     print(site)
     print(sp)
-    test[unique(cdata$Site_name)==site,names(species)==sp] <- sum(is.na(species[cdata$Site_name==site,names(species)==sp]))>1
+    test[unique(cdata$Site_name)==site,names(species)==sp] <- sum(is.na(species[cdata$Site_name==site,names(species)==sp])==F)>=1
   }
 }
 
 
-cdata$sp_richness <- 0
-for(i in 1:dim(cdata)[1]){
-  cdata$sp_richness[i]=sum(is.na(species[i,])==FALSE)
-  
-}
-
-#install.packages("plyr")       # install this great package for splitting, applying and combining data
-#require(plyr)  
-
-
-#species$Site_name <- cdata$Site_name
-#test <- ddply(cdata,.(Site_name),summarize,
-#               sp_rich=
-#)
