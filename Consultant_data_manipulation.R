@@ -161,3 +161,27 @@ for(site in 1:length(ddiversity$diversitydata)){
   size=log10(ddiversity$diversitydata[site]+1)*10                                                                     # calculate symbol size
   points(ddiversity$Longitude[site],ddiversity$Latitude[site],pch=16,cex=size)                       # add site locations
 }
+
+#calculate richness
+SpeciesRichness <- rowSums(test)
+sp_richness <- as.data.frame(SpeciesRichness)
+sp_richness$sites=row.names(sp_richness)
+#add latitude and longitude
+unique(cdata$Site_name)             
+unique(sp_richness$sites)
+
+unique(cdata$Site_name)==unique(sp_richness$sites)  
+
+# make new dataframe by merging the species and site data by location/site_name
+sp_richness_data <- merge(cdata,sp_richness, by.x="Site_name",by.y="sites")
+
+#map
+map("worldHires", xlim=xlim, ylim=ylim, col="gray90", fill=TRUE, resolution=0)    # make base map
+map.axes()                                                                        # add axes
+map.scale(relwidth=0.5)    
+text(sp_richness_data$Longitude,sp_richness_data$Latitude,sp_richness_data$Site_name,col="black",cex=0.7,pos=2)
+title("Sampling Stations by Species Richness")
+for(site in 1:length(sp_richness_data$SpeciesRichness)){
+  size=log10(sp_richness_data$SpeciesRichness[site]+1)*3                                                                     # calculate symbol size
+  points(sp_richness_data$Longitude[site],sp_richness_data$Latitude[site],pch=16,cex=size)                       # add site locations
+}
