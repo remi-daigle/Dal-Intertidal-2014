@@ -7,10 +7,10 @@ require(plyr)
  ### High Tide ###
 table_mean <- ddply(Bio,.(Strata),summarize,
                #QUADRAT SAMPLES#
-               Mytilus_sp_abunbance=mean(ab_m2_Mytilus_sp/Quadrat_m2,na.rm = TRUE),
-               Semibalanus_balanoides_abunbance=mean(ab_m2_Semibalanus_balanoides/Quadrat_m2,na.rm = TRUE),
-               Littorina_saxatilis_abunbance=mean(ab_m2_Littorina_saxatilis/Quadrat_m2,na.rm = TRUE),
-               Pagurus_longicarpus_abunbance=mean(ab_m2_Pagurus_longicarpus/Quadrat_m2,na.rm = TRUE),
+               Fucus_spiralis_percentcover=mean(pc_Fucus_spiralis/Quadrat_m2,na.rm = TRUE),
+               Fucus_distichous_drift_percentcover=mean(pc_Fucus_distichous_drift/Quadrat_m2,na.rm = TRUE),
+               Fucus_distichous_attached_percentcover=mean(pc_Fucus_distichous_attached/Quadrat_m2,na.rm = TRUE),
+               Fucus_vesiculosus_percentcover=mean(ab_m2_Pagurus_longicarpus/Quadrat_m2,na.rm = TRUE),
                Carcinus_maenas_abunbance=mean(ab_m2_Carcinus_maenas/Quadrat_m2,na.rm = TRUE),
                ab_m2_Chondrus.crispus_abundance=mean(ab_m2_Chondrus.crispus/Quadrat_m2, na.rm = TRUE),  
                #Core Samples#
