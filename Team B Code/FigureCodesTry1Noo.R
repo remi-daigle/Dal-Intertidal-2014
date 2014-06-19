@@ -36,10 +36,11 @@ FigureTable<- ddply(TotalData,.(Salinity),summarize,
 ###### Make Graph ########
 
 jpeg('SalinityAbundance1', height=1200, width=2400, res=400, qual=100  )
-hist(FigureTable$Salinity, xlab="Salinity (ppt)", ylab= expression ("Abundance (Ind/m"^2*")"), main=" ",breaks=c(1.015,1.020,1.025,1.030,1.035), ylim=c(0,10))
+barplot(FigureTable$MeanAbundance, names.arg=FigureTable$Salinity, xlab="Salinity", ylab= expression ("Abundance (Ind/m"^2*")"), main=" ")
 dev.off()
 
 #### Error Bars ###
+
 
 getwd()
 
