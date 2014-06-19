@@ -4,7 +4,7 @@
 rm(list=ls())
 
 #Load Data
-TotalData<- read.csv("/Users/daniellelmanuel/Dal-Intertidal-2014/Intertidal_Master_Data_Sheet_2014.csv")
+TotalData<- read.csv("/Users/daniellelmanuel/Desktop/Intertidal_Master_Data_Sheet_2014forR.csv")
 
 ######### Make new data set with only salinities and abundances#########
 
@@ -12,7 +12,7 @@ TotalData<- read.csv("/Users/daniellelmanuel/Dal-Intertidal-2014/Intertidal_Mast
 unique(TotalData$Salinity[TotalData$Strata=="H"])
 
 #Bind salinity and abundance in data table
-SalinityTable <- cbind(as.character(TotalData$Salinity), TotalData$ab_m2_Mytilus_sp)
+SalinityTable <- cbind(TotalData$Salinity, TotalData$ab_m2_Mytilus_sp)
 
 #Makes SalinityTable a new data frame
 SalinityTable <- as.data.frame(SalinityTable)
@@ -22,8 +22,15 @@ SalinityTable$V2[is.na(SalinityTable$V2)]=0
 
 #Change Column Names
 
-colnames(SalinityTable) <- c("Salinity", " Mytilus Abundance [M2]")
+colnames(SalinityTable) <- c("Salinity", "Abundance")
 
-TotalData$Strata
-names(TotalData)
+
+##
+TotalData[is.na(TotalData)]=0
+FigureTable<- ddply(TotalData,.(Salinity),summarize,
+                MeanAbundance=mean(ab_m2_Mytilus_sp/Quadrat_m2,na.rm = TRUE),
+                SDAbundance=sd(ab_m2_Mytilus_sp/Quadrat_m2,na.rm = TRUE),
+                NAbundance=sum(is.na(ab_m2_Mytilus_sp)==F)
+)
+
 
