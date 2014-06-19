@@ -3,9 +3,24 @@ rm(list=ls())
 ######################### Strata Vs Biodiversity #####################3333
 Bio <-read.csv("C:\\Users\\Joe\\Documents\\GitHub\\Dal-Intertidal-2014\\Intertidal_Master_Data_Sheet_2014.csv") 
 require(plyr)
+# removing na from Bio graph
+
+Bio$ab_m2_Mytilus_sp[is.na(Bio$ab_m2_Mytilus_sp)]=0
+Bio$ab_m2_Semibalanus_balanoides[is.na(Bio$ab_m2_Semibalanus_balanoides)]=0
+Bio$ab_m2_Littorina_saxatilis[is.na(Bio$ab_m2_Littorina_saxatilis)]=0
+Bio$ab_m2_Pagurus_longicarpus[is.na(Bio$ab_m2_Pagurus_longicarpus)]=0
+Bio$ab_m2_Chondrus.crispus[is.na(Bio$ab_m2_Chondrus.crispus)]=0
+Bio$ab_m2_Carcinus_maenas[is.na(Bio$ab_m2_Carcinus_maenas)]=0
+Bio$ab_m3_Mya_arenaria[is.na(Bio$ab_m3_Mya_arenaria)]=0
+Bio$ab_m3_Mytilus_sp[is.na(Bio$ab_m3_Mytilus_sp)]=0
+Bio$ab_m3_Semibalanus_balanoides[is.na(Bio$ab_m3_Semibalanus_balanoides)]=0
+Bio$ab_m3_Pagurus_longicarpus[is.na(Bio$ab_m3_Pagurus_longicarpus)]=0
+Bio$ab_m3_Glycera_dibrachiata[is.na(Bio$ab_m3_Glycera_dibrachiata)]=0
+Bio$ab_m2_Chondrus.crispus[is.na(Bio$ab_m2_Chondrus.crispus)]=0
+
 
  ### High Tide ###
-table_mean <- ddply(Bio,.(Strata),summarize,
+table_means <- ddply(Bio,.(Strata),summarize,
                #QUADRAT SAMPLES#
                Mytilus_sp_abunbance=mean(ab_m2_Mytilus_sp/Quadrat_m2,na.rm = TRUE),
                Semibalanus_balanoides_abunbance=mean(ab_m2_Semibalanus_balanoides/Quadrat_m2,na.rm = TRUE),
@@ -61,6 +76,8 @@ table_stdErr <- ddply(Bio,.(Strata),summarize,
 
 
 barplot(table_mean$Mytilus_sp_abunbance[c(1,3,2)], names.arg=c("High","Mid","Low"), xlab="Tidal Ranges",ylab= "Mean abundances")
+segments(table_mean, table_mean$Mytilus_sp_abunbance[c(1,3,2)] + table_sd$Mytilus_sp_abunbance, 
+         table_mean,table_sd$Mytilus_sp_abunbance, lwd=2)
 
 
 
