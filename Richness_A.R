@@ -17,4 +17,23 @@ for(site in unique(cdata$Site_name)){
   }
 }
 
+#next, calculate diversity
+#using abundance (if it starts with ab) sum up each column
+
+#install vegan to calculate diversity
+
+install.packages("vegan")
+require(vegan)
+
+#create a dataframe that only had abundances
+species <- cdata[,substr(names(cdata),1,2)=="ab"]
+
+#made all nas = 0
+species[is.na(species)] <- 0
+
+#runs diversity
+diversity(species, "shannon")
+
+
+
 
