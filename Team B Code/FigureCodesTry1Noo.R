@@ -41,6 +41,14 @@ dev.off()
 
 #### Error Bars ###
 
+AB_mean <- FigureTable$MeanAbundance
+AB_se <- tapply(SalinityTable$Abundance,INDEX=SalinityTable$Salinity, sd, na.rm = TRUE)/sqrt(count(SalinityTable,vars="Salinity")$freq)
+
+jpeg('SalinityAbundance1', height=1200, width=2400, res=400, qual=100  )
+mp <- barplot(FigureTable$MeanAbundance, names.arg=FigureTable$Salinity, xlab="Salinity", ylab= expression ("Abundance (Ind/m"^2*")"), main=" ",ylim=c(0,250))              # plots the barplot and saves the midpoints in mp
+segments(mp, AB_mean + AB_se, mp,AB_mean, lwd=2)  # plots positive error bar centered on mp
+segments(mp - 0.1, AB_mean + AB_se, mp + 0.1, AB_mean + AB_se, lwd=2)  #plots error bar caps
+dev.off()
 
 getwd()
 
