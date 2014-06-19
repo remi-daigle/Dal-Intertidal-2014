@@ -7,35 +7,20 @@ require(plyr)
  ### High Tide ###
 table_mean <- ddply(Bio,.(Strata),summarize,
                #QUADRAT SAMPLES#
-               Fucus_spiralis_percentcover=mean(pc_Fucus_spiralis/Quadrat_m2,na.rm = TRUE),
-               Fucus_distichous_drift_percentcover=mean(pc_Fucus_distichous_drift/Quadrat_m2,na.rm = TRUE),
-               Fucus_distichous_attached_percentcover=mean(pc_Fucus_distichous_attached/Quadrat_m2,na.rm = TRUE),
-               Fucus_vesiculosus_percentcover=mean(ab_m2_Pagurus_longicarpus/Quadrat_m2,na.rm = TRUE),
-               Carcinus_maenas_abunbance=mean(ab_m2_Carcinus_maenas/Quadrat_m2,na.rm = TRUE),
-               ab_m2_Chondrus.crispus_abundance=mean(ab_m2_Chondrus.crispus/Quadrat_m2, na.rm = TRUE),  
-               #Core Samples#
-               Mya_arenaria_abunbance=mean(ab_m3_Mya_arenaria/Core_m3,na.rm = TRUE),
-               Mytilus_sp_abunbance=mean(ab_m3_Mytilus_sp/Core_m3,na.rm = TRUE),
-               Semibalanus_balanoide_abunbance=mean(ab_m3_Semibalanus_balanoides/Core_m3,na.rm = TRUE),
-               Pagurus_longicarpus_abunbance=mean(ab_m3_Pagurus_longicarpus/Core_m3,na.rm = TRUE),
-               Glycera_dibrachiata_abunbance=mean(ab_m3_Glycera_dibrachiata/Core_m3,na.rm = TRUE),
-               ab_m3_Asterias.spp_abunbance=mean(ab_m3_Asterias.spp./Core_m3,na.rm = TRUE)
+               Fucus_spiralis_percentcover=mean(pc_Fucus_spiralis,na.rm = TRUE),
+               Fucus_distichous_drift_percentcover=mean(pc_Fucus_distichous_drift,na.rm = TRUE),
+               Fucus_distichous_attached_percentcover=mean(pc_Fucus_distichous_attached,na.rm = TRUE),
+               Fucus_vesiculosus_percentcover=mean(pc_Fucus_vesiculosus,na.rm = TRUE),
+               Ulva_.something..._percentcover=mean(pc_Ulva_.something...,na.rm = TRUE),  
+              
 )
 table_sd <- ddply(Bio,.(Strata),summarize,
                     #QUADRAT SAMPLES#
-                    Mytilus_sp_abunbance=sd(ab_m2_Mytilus_sp/Quadrat_m2,na.rm = TRUE),
-                    Semibalanus_balanoides_abunbance=sd(ab_m2_Semibalanus_balanoides/Quadrat_m2,na.rm = TRUE),
-                    Littorina_saxatilis_abunbance=sd(ab_m2_Littorina_saxatilis/Quadrat_m2,na.rm = TRUE),
-                    Pagurus_longicarpus_abunbance=sd(ab_m2_Pagurus_longicarpus/Quadrat_m2,na.rm = TRUE),
-                    Carcinus_maenas_abunbance=sd(ab_m2_Carcinus_maenas/Quadrat_m2,na.rm = TRUE),
-                    ab_m2_Chondrus.crispus_abundance=sd(ab_m2_Chondrus.crispus/Quadrat_m2, na.rm = TRUE),  
-                    #Core Samples#
-                    Mya_arenaria_abunbance=sd(ab_m3_Mya_arenaria/Core_m3,na.rm = TRUE),
-                    Mytilus_sp_abunbance=sd(ab_m3_Mytilus_sp/Core_m3,na.rm = TRUE),
-                    Semibalanus_balanoide_abunbance=sd(ab_m3_Semibalanus_balanoides/Core_m3,na.rm = TRUE),
-                    Pagurus_longicarpus_abunbance=sd(ab_m3_Pagurus_longicarpus/Core_m3,na.rm = TRUE),
-                    Glycera_dibrachiata_abunbance=sd(ab_m3_Glycera_dibrachiata/Core_m3,na.rm = TRUE),
-                    ab_m3_Asterias.spp_abunbance=sd(ab_m3_Asterias.spp./Core_m3,na.rm = TRUE)
+                  Fucus_spiralis_percentcover=sd(pc_Fucus_spiralis,na.rm = TRUE),
+                  Fucus_distichous_drift_percentcover=sd(pc_Fucus_distichous_drift,na.rm = TRUE),
+                  Fucus_distichous_attached_percentcover=sd(pc_Fucus_distichous_attached,na.rm = TRUE),
+                  Fucus_vesiculosus_percentcover=sd(pc_Fucus_vesiculosus,na.rm = TRUE),
+                  Ulva_.something..._percentcover=sd(pc_Ulva_.something...,na.rm = TRUE),
 )
 
 stdErr <- function(x) {
