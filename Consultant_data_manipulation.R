@@ -92,3 +92,72 @@ points(location_data$Longitude,location_data$Latitude,pch=16,cex=1.5)
 locations <- c("Cranberry Cove", "Eastern Passage", "Bear River", "Wolfville", "Summerville")
 text(location_data$Longitude,location_data$Latitude,locations,col="black",cex=0.7,pos=2)
 title("Sampling Stations")
+
+
+#####################Diversity Map##################
+#import intertidal master data sheet
+cdata <- read.csv("~/Documents/Dalhousie/Intertidal Ecology/Dal-Intertidal-2014/Intertidal_Master_Data_Sheet_2014.csv")
+
+#abundance and species richness
+species <- cdata[,substr(names(cdata),1,2)=="ab"|substr(names(cdata),1,2)=="pc"]
+
+test <- as.data.frame(matrix(NA,nrow=length(unique(cdata$Site_name)),ncol=length(names(species))))
+names(test) <- names(species)
+row.names(test) <- unique(cdata$Site_name)
+for(site in unique(cdata$Site_name)){
+  for(sp in names(species)){
+    print(site)
+    print(sp)
+    test[unique(cdata$Site_name)==site,names(species)==sp] <- sum(is.na(species[cdata$Site_name==site,names(species)==sp])==F)>=1
+  }
+}
+#next, calculate diversity
+#using abundance (if it starts with ab) sum up each column
+
+#install vegan to calculate diversity
+install.packages("vegan")
+require(vegan)
+
+#create a dataframe that only had abundances
+species <- cdata[,substr(names(cdata),1,2)=="ab"]
+
+#made all nas = 0
+species[is.na(species)] <- 0
+
+#runs diversity, puts into matrix
+diversitydata <- diversity(species, "shannon")
+#matrix into dataframe
+ddiversity <- as.data.frame(diversitydata)
+#adds columns from cdata
+ddiversity$site <- cdata$Site_name
+ddiversity$strata <- cdata$Strata
+ddiversity$Longitude <- cdata$Longitude
+ddiversity$Latitude <- cdata$Latitude
+
+#map with diversity
+install.packages("marmap")
+install.packages("maps")
+install.packages("mapdata")
+require(maps)
+require(mapdata)
+
+# setlat/long limits
+xlim=c(-67,-62)
+ylim=c(43,46)
+
+#Lat and Long in a table
+location_data <- matrix(c(44.5001, -63.9250, 44.6086, -63.4936, 44.6148, -65.6774, 45.1596, -64.3581, 43.948126, -64.820485),ncol=2,byrow=TRUE)
+colnames(location_data) <- c("Latitude", "Longitude")
+rownames(location_data) <- c("Cranberry Cove", "Eastern Passage", "Bear River", "Wolfville", "Summerville")
+location_data <- as.data.frame.matrix(location_data) 
+
+map("worldHires", xlim=xlim, ylim=ylim, col="gray90", fill=TRUE, resolution=0)    # make base map
+map.axes()                                                                        # add axes
+map.scale(relwidth=0.5)    
+locations <- c("Cranberry Cove", "Eastern Passage", "Bear River", "Wolfville", "Summerville")
+text(ddiversity$Longitude,ddiversity$Latitude,ddiversity$site,col="black",cex=0.7,pos=2)
+title("Sampling Stations by Diversity")
+for(site in 1:length(ddiversity$diversitydata)){
+  size=log10(ddiversity$diversitydata[site]+1)*10                                                                     # calculate symbol size
+  points(ddiversity$Longitude[site],ddiversity$Latitude[site],pch=16,cex=size)                       # add site locations
+}
