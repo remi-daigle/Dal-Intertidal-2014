@@ -14,6 +14,7 @@ source("SiteMap.R")
 # Tidal Height
 # Grain Size
 # Strata
+source("Species_abundance_(core_quadrat).R")
 
 # Derived Biological var (Biodiversity, species richness)
 
