@@ -28,15 +28,7 @@ SWHTable <- as.data.frame(SWHTable)
 SWHTable$V2[is.na(SWHTable$V2)]=0
 
 #Change Column Names
-
 colnames(SWHTable) <- c("SWH", "Abundance")
-
-
-###### Make Graph ########
-
-jpeg('SWHAbundance1', height=1200, width=2400, res=400, qual=100  )
-barplot(FigureTable$MeanAbundance, names.arg=FigureTable$SWH, xlab="Standard Wave Height", ylab= expression ("Abundance (Ind/m"^2*")"), main=" ")
-dev.off()
 
 #### Error Bars ###
 
