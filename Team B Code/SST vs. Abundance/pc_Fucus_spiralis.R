@@ -1,4 +1,3 @@
-#CODE FOR PERCENT COVERAGE
 #Clear Yer Stuff
 rm(list=ls())
 
@@ -35,10 +34,7 @@ FigureTable<- ddply(TotalData,.(SST),summarize,
 
 ###### Make Graph ########
 
-jpeg('SSTPercent Coverage1.jpeg', height=1200, width=2400, res=400, qual=100 )
-barplot(FigureTable$MeanPercentCoverage, names.arg=FigureTable$SST, xlab="SST", ylab= expression ("Percent Coverage (%)"), main=" ")
-dev.off()
-getwd()
+
 
 #### Error Bars ###
 
