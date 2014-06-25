@@ -1,7 +1,7 @@
 rm(list=ls())
 
 ######################### Strata Vs Biodiversity #####################3333
-Bio <-read.csv("~\\GitHub\\Dal-Intertidal-2014\\Intertidal_Master_Data_Sheet_2014.csv") 
+Bio <-read.csv(paste(wd,"Intertidal_Master_Data_Sheet_2014.csv",sep="")) 
 require(plyr)
 # removing na from Bio graph
 

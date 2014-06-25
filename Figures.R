@@ -1,4 +1,5 @@
 ######## Figure List #############
+wd="~/GitHub/Dal-Intertidal-2014/"
 getwd()
 ls()
 # site map
