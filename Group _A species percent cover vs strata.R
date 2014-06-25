@@ -50,7 +50,7 @@ for(sp in names(table_mean[,-1])){
 }
 
 
-                 
+###No idea what this part does-joe??###                 
   
 obj <- hist(cdata$size_mm[cdata$strata=="H"])
 obj$counts <- obj$counts/sum(obj$counts)*100
