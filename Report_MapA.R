@@ -20,11 +20,11 @@ ylim=c(43,46)
 
 #Lat and Long in a table
 
-location_data <- matrix(c(44.5001, -63.9250, 44.6086, -63.4936, 44.6148, -65.6774, 45.1596, -64.3581, 43.948126, -64.820485),ncol=2,byrow=TRUE)
+location_data <- matrix(c(44.5001, -63.9250, 44.6332, -63.5987, 44.6148, -65.6774, 45.1596, -64.3581, 43.948126, -64.820485),ncol=2,byrow=TRUE)
 
 colnames(location_data) <- c("Latitude", "Longitude")
 
-rownames(location_data) <- c("Cranberry Cove", "Eastern Passage", "Bear River", "Wolfville", "Summerville")
+rownames(location_data) <- c("Cranberry Cove", "South Street", "Bear River", "Wolfville", "Summerville")
 
 location_data <- as.data.frame.matrix(location_data) 
 
