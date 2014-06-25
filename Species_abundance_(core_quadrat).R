@@ -102,7 +102,4 @@ for(sp in names(table_means[,-1])){
   title(sp_names[names(table_means)==sp])
 }
 
-ylim=c(0,max(((mean_ab)*2),na.rm=T))
 
-
-summary(Bio$ab_m2_Hiatella.artica  )
