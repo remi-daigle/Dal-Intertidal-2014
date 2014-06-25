@@ -1,4 +1,4 @@
-rm(list=ls())
+
 
 ######################### Strata Vs Biodiversity #####################3333
 Bio <-read.csv(paste(wd,"Intertidal_Master_Data_Sheet_2014.csv",sep="")) 
