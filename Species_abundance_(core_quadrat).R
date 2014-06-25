@@ -1,7 +1,7 @@
 rm(list=ls())
 
 ######################### Strata Vs Biodiversity #####################3333
-Bio <-read.csv("C:\\Users\\Joe\\Documents\\GitHub\\Dal-Intertidal-2014\\Intertidal_Master_Data_Sheet_2014.csv") 
+Bio <-read.csv("~\\GitHub\\Dal-Intertidal-2014\\Intertidal_Master_Data_Sheet_2014.csv") 
 require(plyr)
 # removing na from Bio graph
 
@@ -102,4 +102,4 @@ for(sp in names(table_means[,-1])){
   title(sp_names[names(table_means)==sp])
 }
 
-
+df 
