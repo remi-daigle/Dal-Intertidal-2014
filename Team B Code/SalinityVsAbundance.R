@@ -4,7 +4,7 @@ Salinity vs. Abundances (Biological)
 rm(list=ls())
 
 #Load Data
-TotalData<- read.csv("/Users/daniellelmanuel/Desktop/Intertidal_Master_Data_Sheet_2014forR.csv")
+TotalData<- read.csv(paste(wd, "Intertidal_Master_Data_Sheet_2014.csv", sep=""))
 
 ######### Make new data set with only salinities and abundances#########
 

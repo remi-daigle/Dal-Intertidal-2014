@@ -1,8 +1,7 @@
-#Clear Yer Stuff
-rm(list=ls())
 
 #Load Data
-TotalData<- read.csv("/Users/daniellelmanuel/Dal-Intertidal-2014/Intertidal_Master_Data_Sheet_2014.csv")
+TotalData<- read.csv(paste(wd, "Intertidal_Master_Data_Sheet_2014.csv", sep=""))
+
 
 ######### Make new data set with only salinities and abundances#########
 
