@@ -77,14 +77,30 @@ source(FindFile)
 FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. GlyceraM3.R", sep="")
 source(FindFile)
 
-## To Be done:
-
 #ab_m3_Asterias.spp.
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. AsteriasM3.R", sep="")
+source(FindFile)
+
 #ab_m3_nephtys_caeca
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. NephtysM3.R", sep="")
+source(FindFile)
+
 #ab_m3_Chiridotea_coeca
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. ChiridoteaM3.R", sep="")
+source(FindFile)
+
 #ab_m3_Corophium.volutato
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. C.volutatoM3.R", sep="")
+source(FindFile)
+
 #ab_m3_Carcinus_maenas
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. C.maenusM3.R", sep="")
+source(FindFile)
+
 #ab_m3_Littorina_saxatilis
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. LittorinaM3.R", sep="")
+source(FindFile)
+
 
 #### Percent Cover Quadrats ####
 
