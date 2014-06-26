@@ -50,8 +50,3 @@ for(sp in names(table_mean[,-1])){
 }
 
 
-                 
-  
-obj <- hist(cdata$size_mm[cdata$strata=="H"])
-obj$counts <- obj$counts/sum(obj$counts)*100
-plot(obj, main=" B ", ylab="Proportion  (%)", xlab="Length (mm)", ylim=c(0,100))
