@@ -13,6 +13,7 @@ source("Consultant_data_manipulation.R") #at the end
 # SST
 # Salinity
 # Slope
+require(plyr)
 source(paste(wd,"Team B Code/Slope_vs_Abundance/Slope - ab_m2_Polycaetes.R",sep=""))
 source(paste(wd,"Team B Code/Slope_vs_Abundance/Slope - ab_m2_Littorina_saxatilis.R",sep=""))
 source(paste(wd,"Team B Code/Slope_vs_Abundance/Slope - ab_m3_Mya_arenaria.R",sep=""))
