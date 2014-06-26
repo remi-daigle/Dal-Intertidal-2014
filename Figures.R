@@ -1,11 +1,14 @@
 ######## Figure List #############
-wd="~/GitHub/Dal-Intertidal-2014/"
-getwd()
+#Clear Yer Stuff
+rm(list=ls())
+
+wd=("~/GitHub/Dal-Intertidal-2014/")
+setwd(wd)
 ls()
 # site map
 source("SiteMap.R")
 source("Consultant_data_manipulation.R") #at the end
-
+source(paste(wd,"Team B Code/Slope_vs_Abundance/Slope - ab_m2_Polycaetes.R",sep=""))
 # Physical variables vs Biological
 # SST
 # Salinity
