@@ -40,10 +40,9 @@ for(sp in names(biol)){
     )
     AB_mean <- FigureTable$MeanAbundance
     AB_se <- FigureTable$SDAbundance/sqrt(FigureTable$NAbundance)
-    print(AB_mean)
     jpeg(paste(sp,"_",ph,".jpg"), height=1200, width=2400, res=400, qual=100  )
-    if(is.nan(max(AB_mean)*2)==F) mp <- barplot(FigureTable$MeanAbundance, names.arg=FigureTable$SWH, xlab=phys_names[names(phys)==ph], ylab= expression ("Abundance (Ind/m"^2*")"), main=bio_names[names(biol)==ph],ylim=c(0,max(AB_mean)*2))              # plots the barplot and saves the midpoints in mp
-    if(is.nan(max(AB_mean)*2)==T) mp <- barplot(FigureTable$MeanAbundance, names.arg=FigureTable$SWH, xlab=phys_names[names(phys)==ph], ylab= expression ("Abundance (Ind/m"^2*")"), main=bio_names[names(biol)==ph],ylim=c(0,1))              # plots the barplot and saves the midpoints in mp
+    if(is.nan(max(AB_mean)*2)==F) mp <- barplot(FigureTable$MeanAbundance, names.arg=FigureTable$x, xlab=phys_names[names(phys)==ph], ylab= expression ("Abundance (Ind/m"^2*")"), main=bio_names[names(biol)==sp],ylim=c(0,max(AB_mean)*2))              # plots the barplot and saves the midpoints in mp
+    if(is.nan(max(AB_mean)*2)==T) mp <- barplot(FigureTable$MeanAbundance, names.arg=FigureTable$x, xlab=phys_names[names(phys)==ph], ylab= expression ("Abundance (Ind/m"^2*")"), main=bio_names[names(biol)==sp],ylim=c(0,1))              # plots the barplot and saves the midpoints in mp
     segments(mp, AB_mean + AB_se, mp,AB_mean, lwd=2)  # plots positive error bar centered on mp
     segments(mp - 0.1, AB_mean + AB_se, mp + 0.1, AB_mean + AB_se, lwd=2)  #plots error bar caps
     dev.off()
