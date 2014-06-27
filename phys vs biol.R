@@ -11,7 +11,7 @@ phys <- TotalData[,9:21]
 
 # convert biol counts to abundance
 biol[,substr(names(biol),4,5)=="m2"]=biol[,substr(names(biol),4,5)=="m2"]/TotalData$Quadrat_m2
-biol[,substr(names(biol),4,5)=="m3"]=biol[,substr(names(biol),4,5)=="m3"]/TotalData$Quadrat_m3
+biol[,substr(names(biol),4,5)=="m3"]=biol[,substr(names(biol),4,5)=="m3"]/TotalData$Core_m3
 
 # make vector of label
 ## TO DO: rename labels!
