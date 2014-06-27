@@ -28,8 +28,9 @@ bio_names <- c("Mytilus spp. \n(Quadrat)","Semibalanus balanoides \n(Quadrat)","
                "Nephtys caeca \n(Core)","Chiridotea coeca \n(Core)","Chiridotea coeca \n(Quadrat)","Corophium volutato \n(Core)",
                "Corophium volutato \n(Quadrat)","Carcinus maenas \n(Core)","Littorina saxatilis \n(Core)")
 ## TO DO: rename labels!
-phys_names <- c("Slope","SST","Temp Buoy","Salinity","Salt Buoy","RPD","SWH","Tidal Average",
-                "Tidal Range","Grain size\n(<0.5 mm)","Grain size\n(0.5-1.7 mm)","Grain size\n(1.7-11.2 mm)","Grain size\n(>11.2 mm)")
+phys_names <- c("Slope \n(Deg.)","SST \n(°C) ","Temp Buoy \n(°C)","Salinity \n(ppt)","Salt Buoy \n(ppt)","RPD \n(cm)","SWH \n(m)","Tidal Average \n(m)",
+                "Tidal Range \n(m)","Grain size\n(<0.5 mm)","Grain size\n(0.5-1.7 mm)","Grain size\n(1.7-11.2 mm)","Grain size\n(>11.2 mm)")
+
 ## calculate means and plot
 require(plyr)
 

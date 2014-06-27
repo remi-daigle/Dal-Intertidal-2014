@@ -59,7 +59,7 @@ phys <- cdata2[,9:21]
 
 # make vector of label
 ## TO DO: rename labels!
-phys_names <- c("Slope \n(°)","SST \n(°C) ","Temp Buoy \n(°C)","Salinity \n(ppt)","Salt Buoy \n(ppt)","RPD \n(cm)","SWH \n(m)","Tidal Average \n(m)",
+phys_names <- c("Slope \n(Deg.)","SST \n(°C) ","Temp Buoy \n(°C)","Salinity \n(ppt)","Salt Buoy \n(ppt)","RPD \n(cm)","SWH \n(m)","Tidal Average \n(m)",
                 "Tidal Range \n(m)","Grain size\n(<0.5 mm)","Grain size\n(0.5-1.7 mm)","Grain size\n(1.7-11.2 mm)","Grain size\n(>11.2 mm)")
 
 ## calculate means and plot
