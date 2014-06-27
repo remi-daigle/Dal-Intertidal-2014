@@ -107,12 +107,35 @@ source(FindFile)
 ##To Be done:
 
 #pc_Fucus_spiralis
-#pc_Fucus_distichous_drift
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. PCFucusSpiralis.R", sep="")
+source(FindFile)
+
 #pc_Fucus_distichous_attached
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. PCFucusDist.R", sep="")
+source(FindFile)
+
 #pc_Fucus_vesiculosus
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. PCFucusVesi.R", sep="")
+source(FindFile)
+
 #pc_Acrosiphonia_arcta
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. PCAcros.R", sep="")
+source(FindFile)
+
 #Pc_ascophyllum.nodosum
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. PSAscoph.R", sep="")
+source(FindFile)
+
 #pc_Leatherista_difformus
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. PCLeatherista.R", sep="")
+source(FindFile)
+
 #pc_Nostoc_cyanobacteria
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. PCNostoc.R", sep="")
+source(FindFile)
+
 #c_Hildenbrandia_spp.
+FindFile = paste(wd, "Team B Code/SWH vs. Abundance/SWH vs. Hilden.R", sep="")
+source(FindFile)
+
 
