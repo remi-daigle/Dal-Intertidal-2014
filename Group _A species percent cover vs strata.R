@@ -42,7 +42,7 @@ table_stdErr <- ddply(Bio,.(Strata),summarize,
 )
 
 
-
+par(mfrow=c(2,3))
 for(sp in names(table_mean[,-1])){
   mp <- barplot(table_mean[c(1,3,2),names(table_mean)==sp], names.arg=c("High","Mid","Low"), main=sp_names[names(table_mean[,-1])==sp],xlab="Tidal Ranges",ylab= "Mean percent cover",ylim=c(0,0.4))
   segments(mp, table_mean[c(1,3,2),names(table_mean)==sp] + table_stdErr[c(1,3,2),names(table_mean)==sp], mp,table_mean[c(1,3,2),names(table_mean)==sp], lwd=2)
@@ -50,3 +50,4 @@ for(sp in names(table_mean[,-1])){
 }
 
 
+par(mfrow=c(3,4))
