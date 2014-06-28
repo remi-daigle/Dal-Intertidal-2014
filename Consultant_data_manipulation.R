@@ -1,6 +1,14 @@
 rm(list=ls())
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 #load data
-cdata<- read.csv("~/Documents/Dalhousie/Intertidal Ecology/Dal-Intertidal-2014/Intertidal_Master_Data_Sheet_2014.csv")
+cdata<- read.csv("~/GitHub/Dal-Intertidal-2014/Intertidal_Master_Data_Sheet_2014.csv")
+>>>>>>> origin/master
+=======
+#load data
+cdata<- read.csv("~/Documents/GitHub/Dal-Intertidal-2014/Consultant Data Sheet 2013.csv")
+>>>>>>> parent of d4059cd... mistake
 
 # create record for each ID
 cdata2 <- cbind(as.character(unique(cdata$ID)),0,0)
@@ -17,9 +25,14 @@ for(i in unique(cdata$ID)){
 cdata2 <- as.data.frame(cdata2)
 names(cdata2) <- c("ID","count","volume")
 
+<<<<<<< HEAD
+#Bind salinity and abundance in data table
+SSTTable <- cbind(TotalData$SST, TotalData$pc_Fucus_distichous_drift)
+=======
 # convert count and volume into numeric
 cdata2$count=as.numeric(as.character(cdata2$count))
 cdata2$volume=as.numeric(as.character(cdata2$volume))
+>>>>>>> parent of d4059cd... mistake
 
 
 # change NAs to 0s
@@ -59,14 +72,46 @@ hist(cdata$size_mm[cdata$depth_bin==5])
 
 ######################## 5c #####################
 require(plyr)
+<<<<<<< HEAD
+TotalData[is.na(TotalData)]=0
+FigureTable<- ddply(TotalData,.(SST),summarize,
+                    MeanPercentCoverage=mean(pc_Fucus_distichous_drift,na.rm = TRUE),
+                    SDPercentCoverage=sd(pc_Fucus_distichous_drift,na.rm = TRUE),
+                    NPercentCoverage=sum(is.na(pc_Fucus_distichous_drift)==F)
+)
+
+###### Make Graph ########
+
+jpeg('SSTPercent Coverage1.jpeg', height=1200, width=2400, res=400, qual=100 )
+barplot(FigureTable$MeanPercentCoverage, names.arg=FigureTable$SST, xlab="SST", ylab= expression ("Percent Coverage (%)"), main=" ")
+dev.off()
+getwd()
+
+#### Error Bars ###
+
+AB_mean <- FigureTable$MeanPercentCoverage*100
+AB_se <- FigureTable$SDPercentCoverage/sqrt(FigureTable$NPercentCoverage)*100
+
+jpeg('SSTPercent Coverage1.jpg', height=1200, width=2400, res=400, qual=100 )
+mp <- barplot(AB_mean, names.arg=FigureTable$SST, xlab="SST", ylab= expression ("Percent coverage (%)"), main=" ",ylim=c(0,0.1)) # plots the barplot and saves the midpoints in mp
+segments(mp, AB_mean + AB_se, mp,AB_mean, lwd=2) # plots positive error bar centered on mp
+segments(mp - 0.1, AB_mean + AB_se, mp + 0.1, AB_mean + AB_se, lwd=2) #plots error bar caps
+dev.off()
+=======
 table <- ddply(cdata,.(strata),summarize,
                mean_length=mean(size_mm,na.rm = TRUE),
                sd_length=sd(size_mm,na.rm = TRUE),
                n_length=sum(is.na(size_mm)==F)
 )
 
+>>>>>>> parent of d4059cd... mistake
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of d4059cd... mistake
 ##################### site map #########################
 install.packages("marmap")
 install.packages("maps")
@@ -79,9 +124,15 @@ xlim=c(-67,-62)
 ylim=c(43,46)
 
 #Lat and Long in a table
+<<<<<<< HEAD
 location_data <- matrix(c(44.5001, -63.9250, 44.6332, -63.5987, 44.6148, -65.6774, 45.1596, -64.3581, 43.948126, -64.820485),ncol=2,byrow=TRUE)
 colnames(location_data) <- c("Latitude", "Longitude")
 rownames(location_data) <- c("Cranberry Cove", "South Street", "Bear River", "Wolfville", "Summerville")
+=======
+location_data <- matrix(c(44.5001, -63.9250, 44.6086, -63.4936, 44.6148, -65.6774, 45.1596, -64.3581, 43.948126, -64.820485),ncol=2,byrow=TRUE)
+colnames(location_data) <- c("Latitude", "Longitude")
+rownames(location_data) <- c("Cranberry Cove", "Eastern Passage", "Bear River", "Wolfville", "Summerville")
+>>>>>>> parent of d4059cd... mistake
 location_data <- as.data.frame.matrix(location_data) 
 
 # plot basic map
@@ -89,7 +140,11 @@ map("worldHires", xlim=xlim, ylim=ylim, col="gray90", fill=TRUE, resolution=0)  
 map.axes()                                                                        # add axes
 map.scale(relwidth=0.5)                                                           # add scale bar proportioned to 50% width
 points(location_data$Longitude,location_data$Latitude,pch=16,cex=1.5)
+<<<<<<< HEAD
 locations <- c("Cranberry Cove", "South Street", "Bear River", "Wolfville", "Summerville")
+=======
+locations <- c("Cranberry Cove", "Eastern Passage", "Bear River", "Wolfville", "Summerville")
+>>>>>>> parent of d4059cd... mistake
 text(location_data$Longitude,location_data$Latitude,locations,col="black",cex=0.7,pos=2)
 title("Sampling Stations")
 
@@ -145,6 +200,14 @@ require(mapdata)
 xlim=c(-67,-62)
 ylim=c(43,46)
 
+<<<<<<< HEAD
+=======
+#Lat and Long in a table
+location_data <- matrix(c(44.5001, -63.9250, 44.6086, -63.4936, 44.6148, -65.6774, 45.1596, -64.3581, 43.948126, -64.820485),ncol=2,byrow=TRUE)
+colnames(location_data) <- c("Latitude", "Longitude")
+rownames(location_data) <- c("Cranberry Cove", "Eastern Passage", "Bear River", "Wolfville", "Summerville")
+location_data <- as.data.frame.matrix(location_data) 
+>>>>>>> parent of d4059cd... mistake
 
 map("worldHires", xlim=xlim, ylim=ylim, col="gray90", fill=TRUE, resolution=0)    # make base map
 map.axes()                                                                        # add axes
@@ -180,3 +243,7 @@ for(site in 1:length(sp_richness_data$SpeciesRichness)){
   size=log10(sp_richness_data$SpeciesRichness[site]+1)*3                                                                     # calculate symbol size
   points(sp_richness_data$Longitude[site],sp_richness_data$Latitude[site],pch=16,cex=size)                       # add site locations
 }
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+>>>>>>> parent of d4059cd... mistake

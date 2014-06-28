@@ -102,4 +102,4 @@ for(sp in names(table_means[,-1])){
   title(sp_names[names(table_means)==sp])
 }
 
-df 
+
